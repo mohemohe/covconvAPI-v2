@@ -9,9 +9,11 @@ import sys
 import os
 import subprocess
 
+BASEDIR = os.path.dirname(os.path.abspath(__file__))
+
 def kovlive(ja_JP):
     python_path = sys.executable    
-    kovlive_path = os.path.abspath('./kovlive/kovlive.py')
+    kovlive_path = os.path.join(BASEDIR, './kovlive/kovlive.py')
     
     p = subprocess.Popen([python_path, kovlive_path], shell=False, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
     

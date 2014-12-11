@@ -1,40 +1,28 @@
-
+<!doctype html>
 <html lang="ja">
 <meta charset="UTF-8"> 
 <head>
-    <title>covconvAPI v2</title>
+    <title>covconvAPI v2 (beta)</title>
 </head>
 <body>
-    <h1>covconvAPI v2</h1>
+    <h1>covconvAPI v2 (beta)</h1>
     <h3>これはなに？</h3>
-    <p><a href="http://ghippos.net/special/kovlang.php">こふ語コンバーター</a>を外部から利用するためのAPIです。<br>
-    このページにPOSTするとこふ語を含むXMLデータを返します。</p>
+    <p>
+        <a href="http://ghippos.net/special/kovlang.php">こふ語コンバーター</a>を外部から利用するためのAPIです。<br>
+        このページにリクエストパラメーターを付けてGETすると、こふ語を含むXMLデータを返します。
+    </p>
 
     <h3>使い方</h3>
-    <p>POST: key="ja_JP" value="{文章}"</p>
-    <p>example:<br>POST: key="ja_JP" value="ここに原文を入力すると、こふ語になります。「エナジードリンク」、「サイコロステーキ」、「GitHub」、「Arch Linux」などが変換できます。"</p>
-    <pre>
-&#x3c;&#x3f;xml version="1.0" encoding="UTF-8" ?&#x3e;
-&#x3c;covconv&#x3e;
-    &#x3c;success&#x3e;true&#x3c;success&#x3e;
-    &#x3c;covlang&#x3e;ここに原文を入力するとっこふ語になりますっ｢ｴﾅﾖｰﾄﾞﾘﾝﾎﾟ｣っ｢ｻｲｺﾖｽﾃｯｷ｣っ｢ｷﾞｯﾖﾊﾟﾌﾞ｣っ｢ｱﾁｮｰ ﾘﾅｸｽ｣などが変換できますっ&#x3c;/covlang&#x3e;
-&#x3c;/covconv&#x3e;
-    </pre>
-
-    <p>example:<br>POST: key="wrong_key" value="これは間違った例です。"</p>
-    <pre>
-&#x3c;&#x3f;xml version="1.0" encoding="UTF-8" ?&#x3e;
-&#x3c;covconv&#x3e;
-    &#x3c;success&#x3e;false&#x3c;success&#x3e;
-    &#x3c;covlang&#x3e;Error: input data is "null".&#x3c;/covlang&#x3e;
-&#x3c;/covconv&#x3e;
-    </pre>
+    <p>
+        GET http://api.ghippos.net/covconv/v2?value=hogehuga
+    </p>
+    <p>
+        実際に試してみましょう。<br>
+        「<a href="http://api.ghippos.net/covconv/v2/?value=%E3%83%AC%E3%83%83%E3%83%89%E3%83%96%E3%83%AB%E3%82%84%E3%83%A2%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%BC%E3%81%AA%E3%81%A9%E3%81%AE%E3%82%A8%E3%83%8A%E3%82%B8%E3%83%BC%E3%83%89%E3%83%AA%E3%83%B3%E3%82%AF%E3%81%AE%E9%A3%B2%E3%81%BF%E9%81%8E%E3%81%8E%E3%81%AB%E3%81%AF%E6%B3%A8%E6%84%8F%E3%81%97%E3%81%BE%E3%81%97%E3%82%87%E3%81%86%E3%80%82">レッドブルやモンスターなどのエナジードリンクの飲み過ぎには注意しましょう。</a>」
+    </p>
 
     <h3>使用例</h3>
-    <h4>C#.NET</h4>
-    <script src="https://gist.github.com/mohemohe/8784196.js"></script>
-    <h4>Ruby</h4>
-    <script src="https://gist.github.com/mohemohe/8785360.js"></script>
+    <p>少々お待ちください</p>
 </body>
 </html>
         
